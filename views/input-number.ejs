@@ -1,0 +1,44 @@
+<%- include('includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/form.css">
+</head>
+<body>
+
+<%- include('includes/navigation.ejs') %>
+
+  <main class="input-form">
+    
+    <% if (!showOutput) { %>
+      <!-- Form Begin -->
+      <form action="/number/input" method="POST">
+          <div class="form-control">
+              <label for="inputNumber">Enter Integer:</label>
+              <input type="number" name="inputNumber" id="inputNumber" required>
+          </div>
+          <button class="btn" type="submit">Submit</button>
+      </form>
+      <!-- Form End -->
+    <% } else {  %>
+      <!-- Output Begin -->
+      <div class="container">
+        <p>Click the <b>button</b> below if you want to try another interger.  </p>
+        <a class="btn try-again" href="/number/input">Try another integer?</a>
+        <p class="title">Entered Number:</p>
+        <p><%= resInputNumber %></p>
+      
+        <p class="title">Output:</p>
+          <% if (resInputNumber == 0) { %>
+            <p><%= resNumbers.message %></p>
+          <% } %>
+          <ul class="output-list">
+            <% for (let result of resNumbers.data) { %>
+              <li>
+                  <%= result %>       
+              </li>
+            <% } %>
+          </ul>
+      </div>
+       <!-- Output End -->
+    <% } %>
+  </main>
+
+<%- include('includes/end.ejs') %>

@@ -1,0 +1,38 @@
+.form-control {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.form-control label,
+.form-control input {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.25rem;
+}
+
+.form-control input {
+    border: 1px solid #a1a1a1;
+    font: inherit;
+    border-radius: 2px;
+}
+
+.form-control input:focus {
+    outline-color: #00695c;
+}
+
+.input-form {
+    width: 25rem;
+    max-width: 90%;
+    margin: auto;
+}
+
+.try-again {
+    text-decoration: none;
+    padding: 1px 6px;
+}
+
+.output-list {
+    list-style-type: none;
+    padding: 0px;
+}
+
